@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CandidateHub.DTOs.CustomValidators;
+using System.ComponentModel.DataAnnotations;
 
 namespace CandidateHub.DTOs
 {
@@ -20,9 +21,9 @@ namespace CandidateHub.DTOs
         [MaxLength(100)]
         [EmailAddress]
         public string Email { get; set; } // Unique identifier
-
+        [ContactTimeValidation]
         public TimeSpan? PreferredContactStartTime { get; set; }
-
+        [ContactTimeValidation]
         public TimeSpan? PreferredContactEndTime { get; set; }
 
         [Url]
