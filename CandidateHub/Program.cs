@@ -1,6 +1,7 @@
 using CandidateHub.Data;
 using CandidateHub.Repositories;
 using CandidateHub.Repositories.Interfaces;
+using CandidateHub.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
@@ -15,6 +16,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<ICandidateRepository, CandidateRepository>();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
